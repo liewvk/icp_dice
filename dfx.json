@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "diceapp_backend": {
+      "main": "src/diceapp_backend/main.mo",
+      "type": "motoko"
+    },
+    "diceapp_frontend": {
+      "dependencies": [
+        "diceapp_backend"
+      ],
+      "source": [
+        "src/diceapp_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "diceapp_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
