@@ -1,26 +1,33 @@
 {
   "canisters": {
-    "diceapp_backend": {
-      "main": "src/diceapp_backend/main.mo",
-      "type": "motoko"
-    },
     "diceapp_frontend": {
-      "dependencies": [
-        "diceapp_backend"
-      ],
-      "source": [
-        "src/diceapp_frontend/dist"
-      ],
       "type": "assets",
-      "workspace": "diceapp_frontend"
+      "source": ["dist"],
+      "build": "npm run build"
+    },
+    "diceapp_backend": {
+      "type": "motoko",
+      "main": "src/diceapp_backend/main.mo",
+      "candid": "src/diceapp_backend/diceapp_backend.did"
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    },
+    "ic": {
+      "providers": ["https://ic0.app"],
+      "type": "persistent"
     }
   },
   "defaults": {
     "build": {
-      "args": "",
       "packtool": ""
     }
   },
-  "output_env_file": ".env",
+  "dfx": "0.24.1",
   "version": 1
 }
+
+
