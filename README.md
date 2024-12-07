@@ -1,4 +1,4 @@
-# `diceapp`
+# `Dice App`
 
 Welcome to your new `diceapp` project and to the Internet Computer development community.This is a dice app created using Motoko and ReactJS in ICP.
 
